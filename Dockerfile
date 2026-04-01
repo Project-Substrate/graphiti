@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.9
-FROM python:3.12-slim
+FROM public.ecr.aws/docker/library/python:3.12-slim
 
 # Inherit build arguments for labels
 ARG GRAPHITI_VERSION
