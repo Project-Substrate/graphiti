@@ -15,7 +15,7 @@ on:
 
 jobs:
   manual-review:
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       contents: read
       pull-requests: write

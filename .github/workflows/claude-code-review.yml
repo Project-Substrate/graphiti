@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-fork:
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       contents: read
       pull-requests: write
@@ -24,7 +24,7 @@ jobs:
   auto-review:
     needs: check-fork
     if: needs.check-fork.outputs.is_fork == 'false'
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       contents: read
       pull-requests: write
@@ -83,7 +83,7 @@ jobs:
   # notify-external-contributor:
   #   needs: check-fork
   #   if: needs.check-fork.outputs.is_fork == 'true'
-  #   runs-on: ubuntu-latest
+  #   runs-on: magnon-enterprise-runners
   #   permissions:
   #     pull-requests: write
   #   steps:
