@@ -16,7 +16,7 @@ env:
 
 jobs:
   release:
-    runs-on: magnon-enterprise-runners
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
