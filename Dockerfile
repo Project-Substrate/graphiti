@@ -1,3 +1,4 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
 # syntax=docker/dockerfile:1.9
 FROM public.ecr.aws/docker/library/python:3.12-slim
 
@@ -75,4 +76,6 @@ ENV PORT=8000
 EXPOSE $PORT
 
 # Use uv run for execution
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost:${PORT:-8080}/health/live || exit 1
 CMD ["uv", "run", "uvicorn", "graph_service.main:app", "--host", "0.0.0.0", "--port", "8000"]
