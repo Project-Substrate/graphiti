@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Pytest configuration for MCP server tests.
 This file prevents pytest from loading the parent project's conftest.py

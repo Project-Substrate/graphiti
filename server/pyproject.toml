@@ -66,3 +66,10 @@ docstring-code-format = true
 include = ["."]
 pythonVersion = "3.10"
 typeCheckingMode = "standard"
+
+[tool.mypy]
+python_version = "3.10"
+strict = false
+ignore_missing_imports = true
+warn_return_any = false
+warn_unused_configs = true

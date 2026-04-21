@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """Test script for configuration loading and factory patterns."""
 
 import asyncio

@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Claude Code
+
+permissions:
+  contents: read
 
 on:
   issue_comment:
@@ -18,6 +22,7 @@ jobs:
       (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     permissions:
       contents: read
       pull-requests: write
@@ -61,4 +66,3 @@ jobs:
           # Optional: Custom environment variables for Claude
           # claude_env: |
           #   NODE_ENV: test
-

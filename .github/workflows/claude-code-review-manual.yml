@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Claude PR Review (Manual - External Contributors)
+
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
@@ -16,6 +20,7 @@ on:
 jobs:
   manual-review:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     permissions:
       contents: read
       pull-requests: write

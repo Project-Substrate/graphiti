@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "schedule": ["before 6am on Monday"],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "labels": ["dependencies"],
+  "assignees": [],
+  "reviewers": [],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": false
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": false
+    }
+  ],
+  "ignorePaths": [
+    ".lake/**",
+    "node_modules/**",
+    "vendor/**",
+    "third_party/**"
+  ],
+  "ignoreDeps": [],
+  "enabledManagers": ["github-actions", "pip_requirements", "pyproject", "dockerfile", "npm"],
+  "platformAutomerge": false,
+  "rebaseWhen": "never",
+  "commitMessagePrefix": "chore(deps):",
+  "branchPrefix": "renovate/",
+  "gitAuthor": "Renovate Bot <renovate@magnoncompute.com>"
+}

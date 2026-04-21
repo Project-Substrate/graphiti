@@ -1,12 +1,21 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Claude PR Auto Review (Internal Contributors)
+
+permissions:
+  contents: read
 
 on:
   pull_request:
     types: [opened, synchronize]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check-fork:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     permissions:
       contents: read
       pull-requests: write
@@ -25,6 +34,7 @@ jobs:
     needs: check-fork
     if: needs.check-fork.outputs.is_fork == 'false'
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     permissions:
       contents: read
       pull-requests: write

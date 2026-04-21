@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """Factory classes for creating LLM, Embedder, and Database clients."""
 
 from openai import AsyncAzureOpenAI
@@ -10,7 +12,7 @@ from config.schema import (
 
 # Try to import FalkorDriver if available
 try:
-    from graphiti_core.driver.falkordb_driver import FalkorDriver  # noqa: F401
+    from graphiti_core.driver.falkordb_driver import FalkorDriver
 
     HAS_FALKOR = True
 except ImportError:

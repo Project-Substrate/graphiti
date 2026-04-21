@@ -1,3 +1,4 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
 # syntax=docker/dockerfile:1
 # Standalone Graphiti MCP Server Image
 # This image runs only the MCP server and connects to an external database (Neo4j or FalkorDB)
@@ -78,4 +79,8 @@ HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Run the MCP server
+# Run as non-root user
+RUN addgroup --system --gid 65534 nonroot && \
+    adduser --system --uid 65534 --gid 65534 --no-create-home nonroot
+USER nonroot
 CMD ["uv", "run", "--no-sync", "main.py"]

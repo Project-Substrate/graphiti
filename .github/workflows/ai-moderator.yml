@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: AI Moderator
+permissions:
+  contents: read
+
 on:
   issues:
     types: [opened]
@@ -10,6 +14,7 @@ on:
 jobs:
   spam-detection:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     permissions:
       issues: write
       pull-requests: write

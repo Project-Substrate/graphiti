@@ -19,7 +19,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       contents: read
       packages: write
@@ -50,7 +50,7 @@ jobs:
           echo "vcs_ref=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
       - name: Build Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         id: build
         with:
           context: ./mcp_server
@@ -92,7 +92,7 @@ jobs:
           echo "${TAGS}" | tr ',' '\n'
 
       - name: Push Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./mcp_server
           file: ./mcp_server/docker/Dockerfile

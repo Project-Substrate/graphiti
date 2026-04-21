@@ -1,0 +1,25 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
+title = "Magnon Gitleaks Config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+description = "Ignore test fixtures"
+id = "test-fixtures"
+regex = '''(?i)(fake|example|placeholder|test|dummy|sample)'''
+tags = ["allowlist"]
+
+[allowlist]
+description = "Global allowlist"
+regexes = [
+    '''EXAMPLE_''',
+    '''_PLACEHOLDER''',
+    '''magnon\.io/''',
+]
+paths = [
+    '''.gitleaks.toml''',
+    '''testdata/''',
+    '''fixtures/''',
+    '''tests/''',
+]

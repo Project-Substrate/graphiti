@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """Entity type definitions for Graphiti MCP Server."""
 
 from pydantic import BaseModel, Field

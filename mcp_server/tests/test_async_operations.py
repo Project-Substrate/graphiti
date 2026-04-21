@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Asynchronous operation tests for Graphiti MCP Server.
 Tests concurrent operations, queue management, and async patterns.

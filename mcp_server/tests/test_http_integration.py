@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Integration test for MCP server using HTTP streaming transport.
 This avoids the stdio subprocess timing issues.

@@ -1,0 +1,5 @@
+# Trivy vulnerability ignore list
+# Format: CVE-YYYY-NNNNN
+# Add entries here after manual triage with justification comment
+# Example:
+# CVE-2021-44228  # Log4Shell - not applicable: no Java runtime in this service

@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Lint with Ruff
+
+permissions:
+  contents: read
 
 on:
   push:
@@ -6,10 +10,15 @@ on:
   pull_request:
     branches: ["main"]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ruff:
     environment: development
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python

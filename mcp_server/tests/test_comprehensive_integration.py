@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Comprehensive integration test suite for Graphiti MCP Server.
 Covers all MCP tools with consideration for LLM inference latency.

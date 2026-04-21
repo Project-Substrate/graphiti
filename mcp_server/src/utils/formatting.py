@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """Formatting utilities for Graphiti MCP Server."""
 
 from typing import Any

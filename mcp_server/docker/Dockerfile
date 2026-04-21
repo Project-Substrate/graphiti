@@ -1,3 +1,4 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
 # syntax=docker/dockerfile:1
 # Combined FalkorDB + Graphiti MCP Server Image
 # This extends the official FalkorDB image to include the MCP server
@@ -134,4 +135,8 @@ HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
 
 # Override the FalkorDB entrypoint and use our startup script
 ENTRYPOINT ["/start-services.sh"]
+# Run as non-root user
+RUN addgroup --system --gid 65534 nonroot && \
+    adduser --system --uid 65534 --gid 65534 --no-create-home nonroot
+USER nonroot
 CMD []

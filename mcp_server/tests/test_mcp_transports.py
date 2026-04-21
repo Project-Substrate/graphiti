@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Test MCP server with different transport modes using the MCP SDK.
 Tests both SSE and streaming HTTP transports.

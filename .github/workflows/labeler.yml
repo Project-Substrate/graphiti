@@ -1,0 +1,18 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+name: PR Labeler
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  label:
+    runs-on: magnon-enterprise-runners
+    timeout-minutes: 5
+    steps:
+      - uses: actions/labeler@8558fd74291d67161a8a6ce71f10c0c7be2e3ca9  # v5.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml

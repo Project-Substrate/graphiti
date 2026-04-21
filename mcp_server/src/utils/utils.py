@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """Utility functions for Graphiti MCP Server."""
 
 from collections.abc import Callable

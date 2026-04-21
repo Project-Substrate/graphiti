@@ -1,18 +1,23 @@
-name: Release to PyPI
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
+# POLICY VIOLATION REMOVED: This workflow previously published to public PyPI via
+# pypa/gh-action-pypi-publish. No-public-publishing policy: all code is private.
+# Never publish to public PyPI, npm, crates.io, or any public registry.
+# If package distribution is needed, use the private Magnon registry (PRIVATE_PYPI_URL).
+name: Build & Validate Package
+
+permissions:
+  contents: read
 
 on:
   push:
     tags: ["v*.*.*"]
 
 jobs:
-  release:
+  build:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     permissions:
-      id-token: write
       contents: write
-    environment:
-      name: release
-      url: https://pypi.org/p/zep-cloud
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.11
@@ -33,5 +38,6 @@ jobs:
           fi
       - name: Build project for distribution
         run: uv build
-      - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      # REMOVED: "Publish package distributions to PyPI" step (pypa/gh-action-pypi-publish).
+      # All code is private. Never publish to public PyPI.
+      # To publish to the private Magnon registry, use twine with PRIVATE_PYPI_URL.

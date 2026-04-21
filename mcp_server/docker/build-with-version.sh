@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 # Script to build Docker image with proper version tagging
 # This script queries PyPI for the latest graphiti-core version and includes it in the image tag
 

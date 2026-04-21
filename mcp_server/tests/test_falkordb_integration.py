@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 FalkorDB integration test for the Graphiti MCP Server.
 Tests MCP server functionality with FalkorDB as the graph database backend.

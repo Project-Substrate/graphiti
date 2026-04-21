@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Graphiti MCP Server - Exposes Graphiti functionality through the Model Context Protocol (MCP)
 """

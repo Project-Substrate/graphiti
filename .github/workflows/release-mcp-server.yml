@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Release MCP Server
+
+permissions:
+  contents: read
 
 on:
   push:
@@ -17,12 +21,14 @@ env:
 jobs:
   release:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     permissions:
       contents: write
       id-token: write
     environment:
       name: release
     strategy:
+      fail-fast: false
       matrix:
         variant:
           - name: standalone

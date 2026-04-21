@@ -1,4 +1,8 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Release Server Container
+
+permissions:
+  contents: read
 
 on:
   workflow_run:
@@ -18,6 +22,7 @@ env:
 jobs:
   build-and-push:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     permissions:
       contents: write

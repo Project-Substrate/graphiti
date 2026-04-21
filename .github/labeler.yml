@@ -1,0 +1,23 @@
+infrastructure:
+  - k8s/**
+  - '**/*.bicep'
+  - '**/kustomization.yaml'
+formal-verification:
+  - '**/*.lean'
+ci/cd:
+  - .github/**
+deployment:
+  - '**/app.bicep'
+  - '**/Dockerfile*'
+testing:
+  - tests/**
+  - '**/*_test.py'
+  - '**/*_test.go'
+documentation:
+  - '**/*.md'
+  - docs/**
+dependencies:
+  - '**/requirements*.txt'
+  - '**/pyproject.toml'
+  - '**/go.mod'
+  - '**/package.json'

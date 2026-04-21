@@ -1,3 +1,5 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 from collections import deque
 from unittest.mock import AsyncMock, MagicMock
 

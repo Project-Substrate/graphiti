@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 HTTP/SSE Integration test for the refactored Graphiti MCP Server.
 Tests server functionality when running in SSE (Server-Sent Events) mode over HTTP.

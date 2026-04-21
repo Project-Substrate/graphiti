@@ -1,0 +1,32 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-please-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f  # v4
+        id: release
+        with:
+          release-type: python
+          changelog-path: CHANGELOG.md
+          tag-name-pattern: "v${version}"
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 """
 Stress and load testing for Graphiti MCP Server.
 Tests system behavior under high load, resource constraints, and edge conditions.

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 # Script to build and push standalone Docker image with both Neo4j and FalkorDB drivers
 # This script queries PyPI for the latest graphiti-core version and includes it in the image tag
 
