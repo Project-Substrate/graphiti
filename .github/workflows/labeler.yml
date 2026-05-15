@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 jobs:
   label:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 5
     steps:
       - uses: actions/labeler@8558fd74291d67161a8a6ce71f10c0c7be2e3ca9  # v5.0.0

@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   unit-tests:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
             --ignore=tests/evals/
 
   database-integration-tests:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     services:
       falkordb:

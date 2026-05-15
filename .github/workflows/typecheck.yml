@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   pyright:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 30
     environment: development
     steps:

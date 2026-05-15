@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   check-fork:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     permissions:
       contents: read
@@ -33,7 +33,7 @@ jobs:
   auto-review:
     needs: check-fork
     if: needs.check-fork.outputs.is_fork == 'false'
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 30
     permissions:
       contents: read
@@ -93,7 +93,7 @@ jobs:
   # notify-external-contributor:
   #   needs: check-fork
   #   if: needs.check-fork.outputs.is_fork == 'true'
-  #   runs-on: magnon-enterprise-runners
+  #   runs-on: magnon-enterprise-runners-substrate
   #   permissions:
   #     pull-requests: write
   #   steps:
