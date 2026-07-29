@@ -20,7 +20,7 @@ permissions:
 jobs:
   trivy-fs:
     name: Trivy Filesystem Scan
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     steps:
       - name: Checkout
