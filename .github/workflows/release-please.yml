@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   release-please:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
